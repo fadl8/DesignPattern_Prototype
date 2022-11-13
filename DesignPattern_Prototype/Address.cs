@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern_Prototype
 {
-    public class Address //: ICloneable
+    public class Address : IPrototype<Address>
     {
         public string StreetName { get; set; }
         public int HouseNumber { get; set; }

@@ -20,7 +20,11 @@ namespace DesignPattern_Prototype
             //var Mohmmed = (Person) fadl.Clone();
 
             // when copy the constractor with class its self get clone 
-            var Mohmmed = new Person(fadl);
+            //var Mohmmed = new Person(fadl);
+
+            // with adding the interface 
+            var Mohmmed = fadl.DeepCopy();
+
             Mohmmed.Names[0] = "Mohmmed";
             Mohmmed.Address.StreetName = "Aden";
 
