@@ -17,8 +17,10 @@ namespace DesignPattern_Prototype
             Console.WriteLine(ali);
 
             // with clone 
-            var Mohmmed = (Person) fadl.Clone();
+            //var Mohmmed = (Person) fadl.Clone();
 
+            // when copy the constractor with class its self get clone 
+            var Mohmmed = new Person(fadl);
             Mohmmed.Names[0] = "Mohmmed";
             Mohmmed.Address.StreetName = "Aden";
 

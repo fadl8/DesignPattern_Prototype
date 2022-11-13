@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern_Prototype
 {
-    public class Person : ICloneable
+    public class Person // : ICloneable
     {
         public string[] Names { get; set; }
         public Address Address { get; set; }
@@ -18,13 +18,19 @@ namespace DesignPattern_Prototype
             Address= address;
         }
 
+        public Person(Person other)
+        {
+            Names = other.Names;
+            Address = other.Address;
+        }
+
         public override string ToString()
         {
             return $"{nameof(Names)} : {string.Join(" " , Names)} {nameof(Address)} : {Address}";
         }
-        public object Clone()
-        {
-           return new Person(Names, (Address) Address.Clone());
-        }
+        //public object Clone()
+        //{
+        //   return new Person(Names, (Address) Address.Clone());
+        //}
     }
 }

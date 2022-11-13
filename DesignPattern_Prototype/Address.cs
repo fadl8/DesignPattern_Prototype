@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern_Prototype
 {
-    public class Address : ICloneable
+    public class Address //: ICloneable
     {
         public string StreetName { get; set; }
         public int HouseNumber { get; set; }
@@ -17,14 +17,20 @@ namespace DesignPattern_Prototype
             HouseNumber = houseNumner;
         }
 
+        public Address(Address otherAdress)
+        {
+            StreetName = otherAdress.StreetName;
+            HouseNumber = otherAdress.HouseNumber;
+        }
+
         public override string ToString()
         {
             return $"{nameof(StreetName)} : {string.Join(" ", StreetName)} {nameof(HouseNumber)} : {HouseNumber}";
         }
 
-        public object Clone()
-        {
-            return new Address(StreetName, HouseNumber);
-        }
+        //public object Clone()
+        //{
+        //    return new Address(StreetName, HouseNumber);
+        //}
     }
 }
